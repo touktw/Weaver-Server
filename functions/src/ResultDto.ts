@@ -1,14 +1,12 @@
 import { Serializable, JsonProperty } from "typescript-json-serializer"
 
-
 @Serializable()
-export class Artist {
+export class ResultDto {
     constructor(
         @JsonProperty()
-        public readonly name: string,
+        public readonly description: string,
 
         @JsonProperty()
-        public readonly id: number) {
-
-    }
+        public readonly data: string
+    ) { }
 }

@@ -22,6 +22,12 @@ export class Product {
         public readonly price: number = 0,
 
         @JsonProperty()
-        public readonly artistId: string
+        public readonly artistId: string,
+
+        @JsonProperty()
+        public readonly category: string,
+
+        @JsonProperty()
+        public readonly tag: string,
     ) { }
 }
