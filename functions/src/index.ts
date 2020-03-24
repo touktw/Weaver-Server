@@ -25,16 +25,16 @@ const dummyArtists = [new Artist("artist1", 1), new Artist("artist2", 2), new Ar
 let dummyProducts = new Map<string, Product[]>()
 
 dummyProducts.set("1", [
-  new Product("Title1", "Descipriton1", "", true, false, 50000, "1", "COLLAB", "BT21"),
-  new Product("Title1", "Descipriton1", "", true, false, 50000, "1", "COLLAB", "BT21")
+  new Product("Title1", "Descipriton1", "", true, false, 50000, 1, "COLLAB", "BT21"),
+  new Product("Title1", "Descipriton1", "", true, false, 50000, 1, "COLLAB", "BT21")
 ])
-dummyProducts.set("AT2", [
-  new Product("Title1", "Descipriton1", "", true, false, 50000, "AT2", "COLLAB", "BT21"),
-  new Product("Title1", "Descipriton1", "", true, false, 50000, "AT2", "COLLAB", "BT21"),
+dummyProducts.set("2", [
+  new Product("Title1", "Descipriton1", "", true, false, 50000, 2, "COLLAB", "BT21"),
+  new Product("Title1", "Descipriton1", "", true, false, 50000, 2, "COLLAB", "BT21"),
 ])
-dummyProducts.set("AT3", [
-  new Product("Title1", "Descipriton1", "", true, false, 50000, "AT3", "COLLAB", "BT21"),
-  new Product("Title1", "Descipriton1", "", true, false, 50000, "AT3", "COLLAB", "BT21"),
+dummyProducts.set("3", [
+  new Product("Title1", "Descipriton1", "", true, false, 50000, 3, "COLLAB", "BT21"),
+  new Product("Title1", "Descipriton1", "", true, false, 50000, 3, "COLLAB", "BT21"),
 ])
 
 app.get('/artists', (req, res) => {
