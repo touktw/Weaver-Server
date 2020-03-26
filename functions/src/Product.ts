@@ -4,6 +4,9 @@ import { Serializable, JsonProperty } from "typescript-json-serializer"
 export class Product {
     constructor(
         @JsonProperty()
+        public readonly id: number,
+
+        @JsonProperty()
         public readonly title: string = "title",
 
         @JsonProperty()
@@ -17,6 +20,9 @@ export class Product {
 
         @JsonProperty()
         public readonly isReserve: boolean = false,
+
+        @JsonProperty()
+        public readonly isSoldOut: boolean = false,
 
         @JsonProperty()
         public readonly price: number = 0,
