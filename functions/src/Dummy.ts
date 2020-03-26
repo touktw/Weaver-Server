@@ -1,5 +1,6 @@
 import { Product } from './Product'
 import { Promotion } from './Promotion'
+import { Notice } from './Notice'
 
 export const DummyProducts: Map<string, Product[]> = new Map([
     ["1", [
@@ -64,3 +65,9 @@ export const DummyPromotions: Map<string, Promotion[]> = new Map([
         new Promotion("Promotion", "description", "https://firebasestorage.googleapis.com/v0/b/weverse-shop.appspot.com/o/promotions%2Fpromotion_bts_4.png?alt=media&token=7f5d4684-399a-4f4e-a2ff-6ce61f49d055", 1),
     ]]
 ])
+
+export const DummyNotice = [
+    new Notice("[안내] BTS GLOBAL OFFICIAL FANCLUB ARMY MEMBERSHIP KIT 배송 연기 안내", (Date.now() - 1 * 1000 * 60 * 60 * 24)),
+    new Notice("BT21 신규 상품 판매 안내", (Date.now() - 2 * 1000 * 60 * 60 * 24)),
+    new Notice("BTS MAP OF THE SOUL TOUR - EUROPE ticket sale will be rescheduled", (Date.now() - 3 * 1000 * 60 * 60 * 24)),
+]

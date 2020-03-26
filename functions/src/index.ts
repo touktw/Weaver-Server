@@ -5,7 +5,7 @@ import { Artist } from './Artist'
 import { Product } from './Product'
 import { ResultDto } from './ResultDto'
 import { supportedLocales } from './Locales'
-import { DummyProducts, DummyPromotions } from './Dummy'
+import { DummyProducts, DummyPromotions, DummyNotice } from './Dummy'
 import * as firebase from 'firebase'
 import { Promotion } from './Promotion';
 
@@ -73,5 +73,10 @@ app.get('/promotion', (req, res) => {
     data = data.concat(promotion)
   })
   const response = new ResultDto("success", JSON.stringify(data))
+  res.send(JSON.stringify(response))
+})
+
+app.get('/notice', (req, res) => {
+  const response = new ResultDto("success", JSON.stringify(DummyNotice))
   res.send(JSON.stringify(response))
 })
