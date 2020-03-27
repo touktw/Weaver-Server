@@ -6,7 +6,6 @@ import { Product } from './Product'
 import { ResultDto } from './ResultDto'
 import { supportedLocales } from './Locales'
 import { DummyProducts, DummyPromotions, DummyNotice } from './Dummy'
-import * as firebase from 'firebase'
 import { Promotion } from './Promotion';
 
 
@@ -37,19 +36,28 @@ const dummyArtists = [
 
 app.get('/artists', (req, res) => {
   const data = JSON.stringify(dummyArtists)
-  const response = new ResultDto("success", data)
-  res.send(JSON.stringify(response))
+
+  res.send(JSON.stringify({
+    "description": "success",
+    "data": data
+  }))
 })
 
 app.get('/locales', (req, res) => {
-  const response = new ResultDto("success", JSON.stringify(supportedLocales))
-  res.send(JSON.stringify(response))
+
+  res.send(JSON.stringify({
+    "description": "success",
+    "data": supportedLocales
+  }))
 })
 
 app.get('/product/:id', (req, res) => {
   const data = DummyProducts.get(req.params.id)
-  const response = new ResultDto("success", JSON.stringify(data))
-  res.send(JSON.stringify(response))
+
+  res.send(JSON.stringify({
+    "description": "success",
+    "data": data
+  }))
 })
 
 app.get('/product', (req, res) => {
@@ -57,14 +65,18 @@ app.get('/product', (req, res) => {
   DummyProducts.forEach(products => {
     data = data.concat(products)
   })
-  const response = new ResultDto("success", JSON.stringify(data))
-  res.send(JSON.stringify(response))
+  res.send(JSON.stringify({
+    "description": "success",
+    "data": data
+  }))
 })
 
 app.get('/promotion/:id', (req, res) => {
   const data = DummyPromotions.get(req.params.id)
-  const response = new ResultDto("success", JSON.stringify(data))
-  res.send(JSON.stringify(response))
+  res.send(JSON.stringify({
+    "description": "success",
+    "data": data
+  }))
 })
 
 app.get('/promotion', (req, res) => {
@@ -72,11 +84,16 @@ app.get('/promotion', (req, res) => {
   DummyPromotions.forEach(promotion => {
     data = data.concat(promotion)
   })
-  const response = new ResultDto("success", JSON.stringify(data))
-  res.send(JSON.stringify(response))
+
+  res.send(JSON.stringify({
+    "description": "success",
+    "data": data
+  }))
 })
 
 app.get('/notice', (req, res) => {
-  const response = new ResultDto("success", JSON.stringify(DummyNotice))
-  res.send(JSON.stringify(response))
+  res.send(JSON.stringify({
+    "description": "success",
+    "data": DummyNotice
+  }))
 })
