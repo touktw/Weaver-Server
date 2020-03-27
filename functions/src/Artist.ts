@@ -8,7 +8,15 @@ export class Artist {
         public readonly name: string,
 
         @JsonProperty()
-        public readonly id: number) {
+        public readonly group: string,
 
-    }
+        @JsonProperty()
+        public readonly id: number,
+
+        @JsonProperty()
+        public readonly groupId: number,
+
+        @JsonProperty()
+        public readonly logoUrl: string,
+    ) { }
 }
